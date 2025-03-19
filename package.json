@@ -1,0 +1,26 @@
+{
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "name": "instantsearch-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.1.0"
+  },
+  "dependencies": {
+    "@algolia/generative-experiences-react": "^1.4.0",
+    "algoliasearch": "^4.22.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-instantsearch": "^7.5.0",
+    "react-router-dom": "^6.22.1"
+  }
+}
