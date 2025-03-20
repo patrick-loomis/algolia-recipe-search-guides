@@ -338,83 +338,39 @@
 /* Shopping Guides Headlines Styles */
 .shopping-guides-container {
   margin: 2rem 0;
-  padding: 1rem;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 0 1rem;
+}
+
+.shopping-guides-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
 }
 
 .shopping-guides-grid {
-  display: flex;
-  flex-direction: row;
+  display: grid;
   gap: 1rem;
-  margin-top: 1rem;
-  overflow-x: auto;
-  padding-bottom: 1rem;
-  scrollbar-width: thin;
-  scrollbar-color: #888 #f1f1f1;
-}
-
-.shopping-guides-grid::-webkit-scrollbar {
-  height: 8px;
-}
-
-.shopping-guides-grid::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 4px;
-}
-
-.shopping-guides-grid::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 4px;
-}
-
-.shopping-guide-card {
-  flex: 0 0 300px;
-  background: #f8f9fa;
-  border: 1px solid #e9ecef;
-  border-radius: 8px;
   padding: 1rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  min-height: 150px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.shopping-guide-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+/* Ensure the shopping guides headlines have proper spacing */
+.shopping-guides-grid > div {
+  margin-bottom: 1rem;
 }
 
-.shopping-guide-title {
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-  color: #2c3e50;
+/* Style any links within the shopping guides */
+.shopping-guides-grid a {
+  color: #2563eb;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-.shopping-guide-description {
-  font-size: 0.9rem;
-  color: #6c757d;
-  line-height: 1.4;
-}
-
-.shopping-guide-feedback {
-  margin-top: 1rem;
-  display: flex;
-  gap: 0.5rem;
-}
-
-.shopping-guide-feedback button {
-  padding: 0.25rem 0.5rem;
-  border: 1px solid #dee2e6;
-  border-radius: 4px;
-  background: white;
-  cursor: pointer;
-  font-size: 0.8rem;
-  color: #495057;
-}
-
-.shopping-guide-feedback button:hover {
-  background: #e9ecef;
+.shopping-guides-grid a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
 }
 
 /* Guide Content Styles */

@@ -2,6 +2,8 @@ import React from 'react';
 import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, SearchBox, InfiniteHits, RefinementList, ClearRefinements, Highlight } from 'react-instantsearch';
 import { BrowserRouter, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
+import { createClient } from '@algolia/generative-experiences-api-client';
+import { ShoppingGuidesHeadlines, } from '@algolia/generative-experiences-react';
 import './styles.css';
 
 console.log('App.jsx is running');
@@ -19,6 +21,13 @@ console.log('Algolia Credentials:', {
 
 // Initialize the search client
 const searchClient = algoliasearch(appId, searchOnlyAPIKey);
+
+// Initialize the Generative Experiences client
+const generativeClient = createClient({
+  appId,
+  indexName,
+  searchOnlyAPIKey,
+});
 
 // Add these styles at the top of your file, after the imports
 const styles = {
@@ -127,6 +136,31 @@ function SearchPage() {
           className="search-banner"
         />
         <SearchBox className="search-box" />
+        <div className="shopping-guides-container">
+          <h2>Recipe Inspiration</h2>
+          <div className="shopping-guides-grid">
+            <ShoppingGuidesHeadlines
+              showFeedback
+              userToken="test-user-123"
+              client={generativeClient}
+              category="5"
+              showImmediate
+              nbResults={6}
+              onError={(error) => {
+                console.error('ShoppingGuidesHeadlines error:', error);
+                console.error('Error details:', {
+                  name: error.name,
+                  message: error.message,
+                  code: error.code,
+                  status: error.status
+                });
+              }}
+              onDataReceived={(data) => {
+                console.log('ShoppingGuidesHeadlines data:', data);
+              }}
+            />
+          </div>
+        </div>
         <div className="search-layout">
           <div className="refinements-panel">
             <div className="refinement-section">
